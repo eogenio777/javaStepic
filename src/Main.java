@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 import java.util.Arrays;
 import static java.lang.System. *;
-
+//fuck
 public class Main {
 
     public static boolean booleanExpression(boolean a, boolean b, boolean c, boolean d) {
