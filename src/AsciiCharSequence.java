@@ -6,7 +6,6 @@ public class AsciiCharSequence implements CharSequence/* extends/implements */ {
     public AsciiCharSequence(byte[] arr){
         array_ = arr.clone();
         //array_ = new byte[arr.length];
-
     }
     @Override
     public int length(){
