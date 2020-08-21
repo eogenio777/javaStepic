@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.Random;
 import java.util.Arrays;
 import static java.lang.System. *;
 //fuck
@@ -121,8 +122,20 @@ public class Main {
             return ste[2].getClassName() + "#" + ste[2].getMethodName();
         }
     }
+
     private static void anotherMethod() {
         System.out.println(getCallerClassAndMethodName());
+    }
+
+    public static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
+        for (int i = 0; i < 3; i++) {
+            try (RobotConnection rc = robotConnectionManager.getConnection()) {
+                rc.moveRobotTo(toX, toY);
+                i = 3;
+            } catch (RobotConnectionException e) {
+                if (i == 2) throw e;
+            }
+        }
     }
 
 
@@ -228,8 +241,6 @@ public class Main {
 //        } catch (Exception e){
 //            System.out.println(e.getMessage());
 //        }
-        System.out.println(getCallerClassAndMethodName());
-        anotherMethod();
 
     }
 }
